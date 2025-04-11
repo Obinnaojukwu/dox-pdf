@@ -2,9 +2,9 @@
   "name": "docx-to-pdf",
   "version": "1.0.0",
   "description": "DOCX to PDF Converter",
-  "main": "backend/server.js",
   "scripts": {
-    "start": "npm run start-backend",
+    "install-libreoffice": "apt-get update && apt-get install -y libreoffice",
+    "start": "npm run install-libreoffice && npm run start-backend",
     "start-backend": "npm start --prefix backend",
     "install-backend": "npm install --prefix backend",
     "install": "npm run install-backend"
@@ -12,6 +12,6 @@
   "dependencies": {
     "concurrently": "^8.2.0"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Obinna Ojukwu",
+  "license": "MIT"
 }

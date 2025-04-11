@@ -4,7 +4,8 @@
   "description": "Backend for DOCX to PDF Converter",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "install-libreoffice": "apt-get update && apt-get install -y libreoffice",
+    "start": "npm run install-libreoffice && node server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
