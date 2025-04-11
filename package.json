@@ -1,15 +1,17 @@
 {
-  "name": "docx-to-pdf-backend",
+  "name": "docx-to-pdf",
   "version": "1.0.0",
-  "main": "server.js",
+  "description": "DOCX to PDF Converter",
+  "main": "backend/server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "npm run start-backend",
+    "start-backend": "npm start --prefix backend",
+    "install-backend": "npm install --prefix backend",
+    "install": "npm run install-backend"
   },
   "dependencies": {
-    "dotenv": "^16.0.0",
-    "express": "^4.18.2",
-    "multer": "^1.4.5",
-    "cors": "^2.8.5",
-    "libreoffice-convert": "^1.5.0"
-  }
+    "concurrently": "^8.2.0"
+  },
+  "author": "",
+  "license": "ISC"
 }
