@@ -1,0 +1,17 @@
+{
+    "name": "docx-to-pdf",
+    "version": "1.0.0",
+    "description": "DOCX to PDF Converter",
+    "main": "backend/server.js",
+    "scripts": {
+      "install-dependencies": "npm install --prefix backend",
+      "start-backend": "npm start --prefix backend",
+      "start-frontend": "start http://localhost:5000",
+      "start": "concurrently \"npm run start-backend\" \"npm run start-frontend\""
+    },
+    "dependencies": {
+      "concurrently": "^8.2.0"
+    },
+    "author": "",
+    "license": "ISC"
+  }

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOCX to PDF Converter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">learn<span>Connect</span></div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">How we help</a></li>
+        <li><a href="#">Our offerings</a></li>
+        <li><a href="#">Free</a></li>
+      </ul>
+    </nav>
+<!--
+    <div class="auth-buttons">
+        <a href="#" class="login">Log in</a>
+        <a href="#" class="signup">Sign up</a>
+    </div>
+-->
+
+  </header>
+
+  <main class="hero">
+    <div class="hero-left">
+      <h1>
+        Convert DOCX to PDF <br />
+        with <span class="highlight">Ease</span> and <br />
+        <span class="highlight">Precision</span>
+      </h1>
+      <p class="subtext">
+        Experience fast, reliable, and secure document conversion. <br />
+        Perfect for professionals, students, and personal use.
+      </p>
+      <div class="cta">
+        <button class="cta-btn">Start Converting Now</button>
+        <span class="price">Free of charge<br /><small>No hidden costs</small></span>
+      </div>
+      <div class="brands">
+        <p>Trusted by users worldwide for seamless file conversion.</p>
+        <div class="brand-logos">
+          <img src="images/docx-pdf.png" alt="DOCX to PDF Logo" />
+
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="conversion-card">
+        <h2>Convert DOCX to PDF</h2>
+        <p class="subtext">Fast and secure document conversion in one click</p>
+        <form id="uploadForm" method="post" enctype="multipart/form-data" action="/convert">
+          <label class="upload-label">
+            <input type="file" name="docxFile" accept=".docx" required />
+            <span id="fileName" class="custom-file-text">Choose a DOCX file</span>
+          </label>
+          <button type="submit" class="convert-btn">Convert</button>
+        </form>
+        <div class="progress" id="progress" style="display: none;">
+          <div class="spinner"></div>
+        </div>
+        <div class="message" id="message"></div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const form = document.getElementById('uploadForm');
+    const fileInput = form.querySelector('input[type="file"]');
+    const fileNameDisplay = document.getElementById('fileName');
+    const progress = document.getElementById('progress');
+    const message = document.getElementById('message');
+
+    // Update the file name display
+    fileInput.addEventListener('change', function () {
+      if (fileInput.files.length > 0) {
+        fileNameDisplay.textContent = fileInput.files[0].name;
+      } else {
+        fileNameDisplay.textContent = "Choose a DOCX file";
+      }
+    });
+
+    // Handle form submission
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      progress.style.display = 'block';
+      message.textContent = '';
+      message.classList.remove('success', 'error');
+
+      const formData = new FormData(form);
+
+      fetch('/convert', {
+        method: 'POST',
+        body: formData,
+      })
+        .then(response => {
+          progress.style.display = 'none';
+          if (!response.ok) {
+            throw new Error('Conversion failed. Please try again.');
+          }
+          return response.json();
+        })
+        .then(data => {
+          message.innerHTML = `Conversion successful! <a href="${data.downloadUrl}" target="_blank">Download PDF</a>`;
+          message.classList.add('success');
+        })
+        .catch(error => {
+          progress.style.display = 'none';
+          message.textContent = error.message;
+          message.classList.add('error');
+        });
+    });
+  </script>
+</body>
+</html>

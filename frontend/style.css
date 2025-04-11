@@ -1,0 +1,507 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background-color: #ffffff;
+    color: #111;
+    line-height: 1.5;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    background: #fff;
+}
+
+.logo-subtext {
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+    margin-top: 0.2rem;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #4169e1;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.login {
+    color: #111;
+    text-decoration: none;
+}
+
+.signup {
+    background: #111;
+    color: #fff;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    padding: 4rem;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+.hero-left {
+    flex: 1;
+}
+
+.hero-left h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    color: #c1f24a;
+}
+
+.subtext {
+    color: #444;
+    margin-bottom: 2rem;
+}
+
+.cta {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-btn {
+    background-color: #111;
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.price small {
+    display: block;
+    color: #777;
+    font-weight: normal;
+}
+
+/* BRANDS */
+.brands p {
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.brand-logos {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.brand-logos img {
+    height: 120px;
+    object-fit: contain;
+}
+
+/* RIGHT SIDE */
+.hero-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-left: auto;
+    padding-right: 2rem;
+}
+
+.conversion-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+
+.conversion-card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+/* File upload custom styling */
+.upload-label {
+    display: inline-block;
+    border: 2px dashed #ccc;
+    border-radius: 12px;
+    padding: 15px 20px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 15px;
+    background: #f5f5f5;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.upload-label:hover {
+    border-color: #111;
+}
+
+.upload-label input[type="file"] {
+    display: none;
+}
+
+.custom-file-text {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Convert button */
+.convert-btn {
+    background-color: #111;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.convert-btn:hover {
+    background-color: #333;
+}
+
+.convert-btn .btn-text {
+    display: inline;
+}
+
+/* STAT CARD */
+.stat-card {
+    background: #f3f3f3;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    margin-top: 2rem;
+}
+
+.circle-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #c1f24a;
+    border-radius: 50%;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.stat-sub {
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.stat-card h3 {
+    font-size: 1.3rem;
+    margin: 1rem 0;
+}
+
+.rate {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.client-score {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.score {
+    background-color: black;
+    color: #c1f24a;
+    padding: 0.6rem 1rem;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.details small {
+    color: #666;
+}
+
+/* ADDITIONAL INFO SECTION */
+.additional-info {
+    background: #f9f9f9;
+    padding: 3rem 4rem;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    margin-top: 2rem;
+}
+
+.additional-info h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #111;
+}
+
+.additional-info .info-text {
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Spinner inside the convert button */
+.spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #111;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: spin 1s linear infinite;
+    margin-left: 8px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Message styles */
+.message {
+    margin-top: 1rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.message.success {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+.message.error {
+    color: #f44336;
+    font-weight: bold;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    /* General Layout Adjustments */
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Header */
+    .header {
+        flex-direction: column; /* Stack elements vertically */
+        padding: 1rem;
+        max-width: 100%; /* Ensure it fits the screen width */
+        margin: 0 auto;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 0.5rem;
+        width: fit-content; /* Keep the logo compact */
+    }
+
+    .logo-subtext {
+        font-size: 0.8rem;
+        margin-top: 0.2rem;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        gap: 1rem;
+        text-align: center;
+        margin-top: 1rem;
+        padding: 0;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+        text-decoration: none;
+        color: #222;
+    }
+
+    .auth-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .auth-buttons .login,
+    .auth-buttons .signup {
+        font-size: 0.9rem;
+        width: 100%; /* Make buttons fit the screen width */
+    }
+
+    .signup {
+        padding: 0.6rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem 1rem;
+        gap: 2rem;
+    }
+
+    .hero-left {
+        text-align: center;
+        width: 100%; /* Ensure it fits the screen width */
+    }
+
+    .hero-left h1 {
+        font-size: 1.8rem;
+        line-height: 1.4;
+        margin-bottom: 1rem;
+    }
+
+    .hero-left .subtext {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.4;
+    }
+
+    .cta {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .cta-btn {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+        width: 100%;
+        max-width: 300px; /* Limit the button width */
+    }
+
+    .price {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .price small {
+        font-size: 0.8rem;
+    }
+
+    /* Brands Section */
+    .brands {
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .brand-logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .brand-logos img {
+        height: 50px;
+    }
+
+    /* Hero Right Section */
+    .hero-right {
+        width: 100%; /* Ensure it fits the screen width */
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .conversion-card {
+        padding: 1rem;
+        width: 100%;
+        max-width: 400px; /* Limit the card width */
+        margin: 0 auto;
+        box-shadow: none; /* Remove shadow for a cleaner look */
+    }
+
+    .conversion-card h2 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    .conversion-card .subtext {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .upload-label {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .convert-btn {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+        width: 100%;
+    }
+
+    /* Additional Info Section */
+    .additional-info {
+        padding: 1.5rem 1rem;
+    }
+
+    .additional-info h2 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .additional-info .info-text {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        text-align: center;
+    }
+}

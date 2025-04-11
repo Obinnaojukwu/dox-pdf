@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOCX to PDF Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input[type="file"] {
+      margin-bottom: 20px;
+    }
+    .progress, .message {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Convert DOCX to PDF</h1>
+  <form id="uploadForm" method="post" enctype="multipart/form-data" action="/convert">
+    <input type="file" name="docxFile" accept=".docx" required><br>
+    <button type="submit">Convert</button>
+  </form>
+  <div class="progress" id="progress" style="display: none;">Uploading...</div>
+  <div class="message" id="message"></div>
+
+  <script>
+    const form = document.getElementById('uploadForm');
+    const progress = document.getElementById('progress');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      progress.style.display = 'block';
+      message.textContent = '';
+
+      const formData = new FormData(form);
+
+      fetch('/convert', {
+        method: 'POST',
+        body: formData,
+      })
+        .then(response => {
+          progress.style.display = 'none';
+          if (!response.ok) {
+            throw new Error('Conversion failed. Please try again.');
+          }
+          return response.json();
+        })
+        .then(data => {
+          message.innerHTML = `Conversion successful! <a href="${data.downloadUrl}" target="_blank">Download PDF</a>`;
+        })
+        .catch(error => {
+          progress.style.display = 'none';
+          message.textContent = error.message;
+        });
+    });
+  </script>
+</body>
+</html>
